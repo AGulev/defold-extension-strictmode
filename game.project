@@ -16,13 +16,13 @@ include_dirs = extension-strictmode
 
 [strict_mode]
 thread_detect_all = 1
-thread_policy_active = 1
-thread_detect_disk_reads = 1
-thread_detect_disk_writes = 1
-thread_detect_network = 1
-thread_detect_slow_calls = 1
-thread_detect_resource_mismatches = 1
-thread_detect_unbuffered_io = 1
+thread_policy_active = 0
+thread_detect_disk_reads = 0
+thread_detect_disk_writes = 0
+thread_detect_network = 0
+thread_detect_slow_calls = 0
+thread_detect_resource_mismatches = 0
+thread_detect_unbuffered_io = 0
 thread_penalty_log = 1
 thread_penalty_death = 0
 thread_penalty_dialog = 0
@@ -30,15 +30,16 @@ thread_penalty_death_on_network = 0
 thread_penalty_drop_box = 0
 thread_penalty_flash_screen = 0
 vm_policy_active = 1
-vm_detect_sqllite_leaks = 1
-vm_detect_leaked_closable_objects = 1
 vm_detect_all = 1
+vm_detect_sqllite_leaks = 0
+vm_detect_leaked_closable_objects = 0
 vm_penalty_log = 1
 vm_penalty_death = 0
 vm_death_on_file_uri_exposure = 0
 vm_penalty_death_on_network = 0
 vm_penalty_drop_box = 0
 vm_penalty_death_on_file_uri_exposure = 0
+fdsan_level = 2
 
 [android]
 package = com.agulev.strictmode
