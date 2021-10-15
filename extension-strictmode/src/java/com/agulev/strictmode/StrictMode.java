@@ -24,29 +24,31 @@ class ApplyStrictMode {
         if (detect_all) {
             builder.detectAll();
         }
+        else {
 
-        if (detect_disk_reads) {
-            builder.detectDiskReads();
-        }
+            if (detect_disk_reads) {
+                builder.detectDiskReads();
+            }
 
-        if (detect_disk_writes) {
-            builder.detectDiskWrites();
-        }
+            if (detect_disk_writes) {
+                builder.detectDiskWrites();
+            }
 
-        if (detect_network) {
-            builder.detectNetwork();
-        }
+            if (detect_network) {
+                builder.detectNetwork();
+            }
 
-        if (detect_slow_calls) {
-            builder.detectCustomSlowCalls();
-        }
+            if (detect_slow_calls) {
+                builder.detectCustomSlowCalls();
+            }
 
-        if (detect_resource_mismatches) {
-            builder.detectResourceMismatches();
-        }
+            if (detect_resource_mismatches) {
+                builder.detectResourceMismatches();
+            }
 
-        if (detect_unbuffered_io) {
-            builder.detectUnbufferedIo();
+            if (detect_unbuffered_io) {
+                builder.detectUnbufferedIo();
+            }
         }
 
         if (penalty_log) {
@@ -87,16 +89,19 @@ class ApplyStrictMode {
         boolean penalty_drop_box)
     {
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-        if (detect_sqllite_leaks) {
-            builder.detectLeakedSqlLiteObjects();
-        }
-
-        if (detect_leaked_closable_objects) {
-            builder.detectLeakedClosableObjects();
-        }
 
         if (detect_all) {
             builder.detectAll();
+        }
+        else {
+
+            if (detect_sqllite_leaks) {
+                builder.detectLeakedSqlLiteObjects();
+            }
+
+            if (detect_leaked_closable_objects) {
+                builder.detectLeakedClosableObjects();
+            }
         }
 
         if (penalty_log) {
